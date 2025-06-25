@@ -1,0 +1,30 @@
+volumes:
+  db_data:
+
+services:
+
+  postgres:
+    image: "postgres:17"
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=wb_parser
+      - POSTGRES_USER=wb_parser
+      - POSTGRES_PASSWORD=wb_parser
+    ports:
+      - "127.0.0.1:45432:5432"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile_dev
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    volumes:
+      - .:/code
+    ports:
+      - "8004:8000"

@@ -1,0 +1,50 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.pyo
+*.pyd
+.Python
+
+# === Poetry / uv ===
+.venv/
+.env
+uv.env
+.uv/
+
+# === Django ===
+db.sqlite3
+*.log
+
+# === Ruff / mypy ===
+.ruff_cache/
+.mypy_cache/
+
+# === Node / Quasar ===
+node_modules/
+dist/
+.quasar/
+.quasar-config.*
+*.temp.*
+
+# === Cordova / Capacitor (если будешь использовать позже) ===
+src-cordova/
+src-capacitor/
+
+# === Logs ===
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === System / Editor files ===
+.DS_Store
+Thumbs.db
+.idea/
+*.suo
+*.njsproj
+*.sln
+
+# === Docker ===
+*.pid
+*.pid.lock
+docker-compose.override.yml

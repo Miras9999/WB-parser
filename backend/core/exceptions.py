@@ -1,0 +1,2 @@
+class WbApiError(Exception):
+    pass

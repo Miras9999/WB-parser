@@ -1,0 +1,11 @@
+FROM python:3.12
+ENV PYTHONUNBUFFERED=1
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+WORKDIR /code
+COPY . /code/
+
+RUN uv sync --locked
+
+CMD ["uv", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
