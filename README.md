@@ -20,7 +20,7 @@
 2. В той же директории выполните:
 
     ```bash
-    docker compose -f docker-compose.dev.yml
+    docker compose -f docker-compose.dev.yml up --build -d
     ```
 
 3. Примените миграции внутри контейнера:
